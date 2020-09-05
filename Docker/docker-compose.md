@@ -1,15 +1,14 @@
 # docker-composeによるRails環境構築
 
 参照：
-[公式クイックスタート](https://docs.docker.com/compose/rails)
-[用語集](https://docs.docker.jp/glossary.html)
-[ベストプラクティス集](https://docs.docker.jp/engine/articles/dockerfile_best-practice.html)
+- [公式クイックスタート](https://docs.docker.com/compose/rails)
+- [用語集](https://docs.docker.jp/glossary.html)
+- [ベストプラクティス集](https://docs.docker.jp/engine/articles/dockerfile_best-practice.html)
 
 環境：
-Ruby 2.6.5 / Rails 5.2.4 / PostgreSQL
-Docker for Macでの構築
+Ruby 2.6.5 / Rails 5.2.4 / PostgreSQL / Docker for Macでの構築
 
-
+<br>
 ## 1.準備
 ### Dockerfile作成
 
@@ -83,12 +82,12 @@ services:
       - db
 ```
 
-
+<br>
 ## 2.プロジェクトのビルド
 ### rails new
 
 ```
-docker-compose run web rails new . --force --no-deps --database=postgresql
+$ docker-compose run web rails new . --force --no-deps --database=postgresql
 ```
 
 ### bundle install
@@ -97,7 +96,7 @@ docker-compose run web rails new . --force --no-deps --database=postgresql
 $ docker-compose build
 ```
 
-
+<br>
 ## 3.DB設定
 ### config/database.ymlの修正
 
@@ -120,7 +119,7 @@ test:
   <<: *default
   database: myapp_test
 ```
-
+<br>
 ## 4.アプリケーションの起動
 ### コンテナ起動
 
@@ -134,7 +133,7 @@ $ docker-compose up
 $ docker-compose run web rails db:create
 ```
 
-
+<br>
 ## 5.アプリケーションの停止
 ### バックグラウンド起動の場合
 
@@ -143,6 +142,7 @@ $ docker-compose down
 ```
 フォアグラウンドでの起動の場合`Ctl + C`で停止できる
 
+<br>
 ## 6.開発
 ### docker-compose run をつけてrailsコマンドを実行
 
