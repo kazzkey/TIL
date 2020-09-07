@@ -2,7 +2,7 @@
 
 参照：
 [公式クイックスタート](https://docs.docker.com/compose/rails) /
-[用語集](https://docs.docker.jp/glossary.html) / 
+[用語集](https://docs.docker.jp/glossary.html) /
 [ベストプラクティス集](https://docs.docker.jp/engine/articles/dockerfile_best-practice.html)
 
 環境：
@@ -12,7 +12,7 @@ Ruby 2.6.5 / Rails 5.2.4 / PostgreSQL / Docker for Macでの構築
 ## 1.準備
 ### Dockerfile作成
 
-```
+```ruby
 FROM ruby:2.6.5
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /myapp
@@ -37,7 +37,7 @@ https://qiita.com/uehaj/items/e6dd013e28593c26372d
 
 ### Gemfile作成
 
-```
+```ruby
 source 'https://rubygems.org'
 gem 'rails', '5.2.4'
 ```
@@ -48,7 +48,7 @@ gem 'rails', '5.2.4'
 
 ### entrypoint.sh作成
 
-```
+```ruby
 #!/bin/bash
 set -e
 
@@ -62,7 +62,7 @@ exec "$@"
 ### docker-compose.yml作成
 
 - db, webは好きに名付けてok
-```
+```ruby
 version: '3'
 services:
   db:
@@ -101,7 +101,7 @@ $ docker-compose build
 ### config/database.ymlの修正
 
 - host, username, passwordを追加
-```
+```ruby
 default: &default
   adapter: postgresql
   encoding: unicode
