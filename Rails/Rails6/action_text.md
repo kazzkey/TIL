@@ -25,7 +25,8 @@ $ rails db:migrate
 ```
 
 #### Active Strageに関するGemの設定
-```
+
+```ruby
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 ```
@@ -35,7 +36,7 @@ gem 'image_processing', '~> 1.2'
 ## 2.CRUD作成
 #### 例：scaffoldでblog作成
 ```
-rails g scaffold blog title:string
+$ rails g scaffold blog title:string
 ```
 ちなみにカラムに`content`は入れなくてok。
 
@@ -44,7 +45,7 @@ $ rails db:migrate
 ```
 
 #### リッチテキスト設定を追加
-```
+```ruby
 # app/models/blog.rb
 
 class Blog < ApplicationRecord
@@ -52,7 +53,7 @@ class Blog < ApplicationRecord
 end
 ```
 
-```
+```ruby
 # app/views/blogs/_form.html.erb
 
 <%= form_with(model: blog) do |form| %>
@@ -64,13 +65,13 @@ end
 <% end %>
 ```
 
-```
+```ruby
 # app/views/blogs/show.html.erb
 
 <%= @message.content %>   # 追加
 ```
 
-```
+```ruby
 # app/controllers/blogs_controller.rb
 
 private
