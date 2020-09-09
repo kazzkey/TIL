@@ -1,7 +1,7 @@
 # redirect_to時にパラメータを送る
 
 参照：
-[stackoverflow](https://stackoverflow.com/questions/1430247/passing-parameters-in-rails-redirect-to)
+[stackoverflow](https://stackoverflow.com/questions/1430247/passing-parameters-in-rails-redirect-to) / 
 [Ruby on Rails API](https://api.rubyonrails.org/classes/ActionController/Redirecting.html#method-i-redirect_to)
 
 環境：
