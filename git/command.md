@@ -18,3 +18,16 @@ $ git fetch origin pull/ID/head:BRANCHNAME
 $ git checkout BRANCHNAME
 
 ```
+
+#### リモートブランチをローカルでチェックアウト
+
+リモートリポジトリをローカルへ。
+```
+$ git fetch
+
+```
+
+```
+$ git checkout -b BRANCHNAME origin/BRANCHNAME
+
+```
