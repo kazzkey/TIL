@@ -4,7 +4,7 @@
 [Railsガイド](https://railsguides.jp/action_text_overview.html)
 
 環境：
-Ruby 2.6.5 / Rails 6.0.3 / PostgreSQL
+macOS(Catalina) / Ruby 2.6.5 / Rails 6.0.3 / PostgreSQL
 
 ## 1.準備
 #### まずはおなじみ
