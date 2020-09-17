@@ -4,7 +4,7 @@
 [Railsガイド](https://railsguides.jp/action_text_overview.html)
 
 環境：
-Ruby 2.6.5 / Rails 6.0.3 / PostgreSQL 12.3
+Ruby 2.6.5 / Rails 6.0.3 / PostgreSQL
 
 ## 1.準備
 #### まずはおなじみ
@@ -30,7 +30,7 @@ $ rails db:migrate
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 ```
-コメントアウトする。そして`bundle install`
+コメントアウトをはずす。そして`bundle install`
 
 
 ## 2.CRUD作成
