@@ -1,16 +1,16 @@
 # React.jsについて
 
 参照：
-掌田津耶乃『React.js Next.js 超入門』(秀和システム)
+掌田津耶乃『React.js Next.js 超入門』(秀和システム) / [React公式](https://ja.reactjs.org/)
 
 環境：
-macOS(Catalina) / React 16.13.1
+macOS(Catalina) / React 16.13
 
 ---
-## 1.React.jsとは
+## 1. React.jsとは
 - フロントエンド・フレームワークのひとつ。Facebookが開発。
 ---
-## 2.特徴
+## 2. 特徴
 #### ◎リアクティブプログラミング
 - 元の値を変更すると、表示も自動更新される。
 
@@ -22,7 +22,7 @@ macOS(Catalina) / React 16.13.1
 
 ---
 
-## 3.動作の仕組み(基本的な動き方)
+## 3. 動作の仕組み(基本的な動き方)
 
 1. React組み込みタグを指定
 ```html
@@ -50,7 +50,7 @@ React.createElement(
 ReactDOM.render(エレメント, DOM)
 ```
 ---
-## 4.アプリケーション作成
+## 4. アプリケーション作成
 
 #### コマンド(例)
 
@@ -125,7 +125,7 @@ class Hello extends React.Component {
 
 // 呼び出し
 ReactDOM.render(
-  <Welcome name="Taro" />,
+  <Hello name="Taro" />,
   document.getElementById('root')
 );
 
@@ -138,7 +138,6 @@ Hello Taro!
 #### 【コンポーネントのクラスの成り立ち】
 
 ```JavaScript
-
 // React.Componentクラスを継承する形で始める
 class Hello extends React.Component {
 
@@ -156,3 +155,146 @@ class Hello extends React.Component {
   }
 }
 ```
+
+---
+## 6. ステート
+
+#### 【 ステートとは 】
+- コンポーネントで利用する「値」の保管庫のようなもの。
+
+#### 【 プロパティとの違い 】
+- 「値を取り出して表示する」点においては同じ。ただstateは変更可能。
+
+#### 【例】
+以下の2つはどちらも同じ結果になる。
+
+1. `state`を使った表示
+```JavaScript
+class Hello extends React.Component {
+
+  constructor(props) {
+    super(props);
+    // state変数に初期値を設定
+    this.state = { msg: 'Hello!' };
+  }
+
+  render() {
+    return <h1>{ this.state.msg }!</h1>
+  }
+}
+
+----------------------------------------------------
+
+// 呼び出し
+ReactDOM.render(
+  <Hello />,
+  document.getElementById('root')
+);
+```
+
+2. `props`を使った表示
+```JavaScript
+class Hello extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <h1>{ this.props.msg }!</h1>
+  }
+}
+
+----------------------------------------------------
+
+// 呼び出し
+ReactDOM.render(
+  <Hello msg="Hello" />,
+  document.getElementById('root')
+);
+```
+
+#### 【ステートの更新】
+
+1. シンプルに値を更新する方法 / `setState({…値…})`
+```JavaScript
+class Hello extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { msg: 'Hello!' };
+  }
+
+  render() {
+    return <div>
+      <h1>{ this.state.msg }!</h1>
+      <button onClick={() => this.setState({msg: 'Bye!'})}>Click</button>
+    </div>
+  }
+}
+```
+※ `this.state.msg = 'Bye!'のように直接変更はできない。`
+
+2. 現ステートを利用し新たな値を設定する方法 / `setState((state)=>({…値…}))`
+```JavaScript
+class Hello extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { msg: 'Hello!' };
+    let timer = setInterval(()=>{
+      this.setState((state)=>({
+        msg: state.msg + "!"
+      }));
+    }, 10000);
+  }
+
+  render() {
+    return <div>
+      <h1>{ this.state.msg }!</h1>
+    </div>
+  }
+}
+```
+
+---
+## 7. イベント処理
+
+```JavaScript
+class Toggle extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+#### 【ポイント】
+1. 関数設定
+   - `onClick={ this.handleClick }`のようにメソッドを設定する。
+   - メソッドはクラス内に定義する。
+
+2. メソッドをバインド
+   - `this.handleClick = this.handleClick.bind(this)`のように引数`this`をバインドすることで、イベントからメソッドが実行できるようになる。
