@@ -1,7 +1,7 @@
-react-modalについて
+# react-modalについて
 
 参照：
-[GitHub](https://github.com/reactjs/react-modal) / 
+[GitHub](https://github.com/reactjs/react-modal) /
 [公式ドキュメント](https://reactcommunity.org/react-modal)
 
 環境：
