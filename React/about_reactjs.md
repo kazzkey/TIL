@@ -298,3 +298,32 @@ ReactDOM.render(
 
 2. メソッドをバインド
    - `this.handleClick = this.handleClick.bind(this)`のように引数`this`をバインドすることで、イベントからメソッドが実行できるようになる。
+
+---
+
+## 8. フック
+
+#### 【フックとは】
+- React 16.8で追加された機能、stateなどの機能をクラスを書かずに使うことができる。
+- フックはクラス内部や、if文内などでは動作しない。
+
+
+#### 【ステートフック】
+
+```JavaScript
+import React, { useState } from 'react';
+
+function Example() {
+  // useStateの引数が初期値となる
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
