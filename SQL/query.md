@@ -102,3 +102,37 @@ FROM purchases;
 GROUP BY purchased_at
 HAVING SUM(price) > 2000;
 ```
+
+---
+
+## 3. テーブルの紐付け
+
+#### 【基本形】
+```SQL
+SELECT *
+FROM テーブルA
+
+JOIN テーブルB
+ON 結合条件
+```
+
+#### 【例】
+- (例) 選手とその出身国の例
+```SQL
+SELECT *
+FROM players
+JOIN countries
+ON players.country_id = countries.id;
+```
+
+#### 【LEFT JOIN】
+- NULLのレコードも含めて全て取得する
+- 基本的な書き方はJOINと同じ
+```SQL
+SELECT *
+FROM テーブルA
+
+LEFT JOIN テーブルB
+ON 結合条件
+```
+
