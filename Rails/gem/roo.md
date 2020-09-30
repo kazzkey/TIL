@@ -61,7 +61,7 @@ class User < ApplicationRecord
       next if self.pluck(:id).include?(user.id)
       unless user.save
         flash.now[:alert] = "ユーザの入力に失敗しました"
-        render: :index
+        render :index
       end
     end
   end
