@@ -31,3 +31,18 @@ $ git fetch
 $ git checkout -b BRANCHNAME origin/BRANCHNAME
 
 ```
+
+## ローカル関連
+#### 変更内容をターミナル上で確認する
+
+1. ローカルの変更内容を確認
+```
+$ git diff
+
+```
+
+2. ログの変更内容を確認
+```
+$ git log -p
+
+```
