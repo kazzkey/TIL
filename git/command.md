@@ -4,7 +4,7 @@
 [GitHub ヘルプドキュメント](https://docs.github.com/ja/github)
 
 環境：
-macOS(Catalina) / Ruby 2.6.5 / Rails 5.2.4
+macOS(Catalina)
 
 ## GitHub関連
 #### プルリクエストをローカルでチェックアウト
@@ -12,11 +12,9 @@ macOS(Catalina) / Ruby 2.6.5 / Rails 5.2.4
 プルリクエストのIDを確認。
 ```
 $ git fetch origin pull/ID/head:BRANCHNAME
-
 ```
 ```
 $ git checkout BRANCHNAME
-
 ```
 
 #### リモートブランチをローカルでチェックアウト
@@ -24,12 +22,10 @@ $ git checkout BRANCHNAME
 リモートリポジトリをローカルへ。
 ```
 $ git fetch
-
 ```
 
 ```
 $ git checkout -b BRANCHNAME origin/BRANCHNAME
-
 ```
 
 ## ローカル関連
@@ -38,11 +34,15 @@ $ git checkout -b BRANCHNAME origin/BRANCHNAME
 1. ローカルの変更内容を確認
 ```
 $ git diff
-
 ```
 
 2. ログの変更内容を確認
 ```
 $ git log -p
+```
 
+#### ソースコードを検索する
+
+```
+$ git grep "検索したいワード"
 ```
