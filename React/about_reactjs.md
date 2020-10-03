@@ -72,7 +72,50 @@ $ yarn test
 ```
 
 ---
-## 5. コンポーネント
+## 5. JSX
+- JavaScript XMLの略。直感的で可読性が高い
+
+```JSX
+// 以下の２つは同じ表示となる
+function App() {
+  return (
+    React.createElement("h1", null, "Hello World")
+  );
+}
+
+function App() {
+  return (
+    <h1>Hello World</h1>
+  );
+}
+```
+
+- タグは必ずひとつ。２つあるとエラーとなる。
+```JSX
+// これだとエラーとなる
+function App() {
+  return (
+    <label>名前</label>
+    <input type="text" onChange={()=>{alert("Hello")}} />
+  );
+}
+```
+- 親タグとしてのdivを表示させたくない場合
+```JSX
+// React.Fragmentで囲むとHTML上では表示されない
+function App() {
+  return (
+    <React.Fragment>
+      <label>名前</label>
+      <input type="text" onChange={()=>{alert("Hello")}} />
+    </React.Fragment>
+  );
+}
+```
+
+
+---
+## 6. コンポーネント
 
 #### 【 コンポーネントとは 】
 - 表示内容や必要なデータ、処理などを一つのオブジェクトにまとめた「部品」のようなもの。組み込んでいろいろと使うことができる。
@@ -157,7 +200,7 @@ class Hello extends React.Component {
 ```
 
 ---
-## 6. ステート
+## 7. ステート
 
 #### 【 ステートとは 】
 - コンポーネントで利用する「値」の保管庫のようなもの。
@@ -258,7 +301,7 @@ class Hello extends React.Component {
 ```
 
 ---
-## 7. イベント処理
+## 8. イベント処理
 
 ```JavaScript
 class Toggle extends React.Component {
@@ -301,7 +344,7 @@ ReactDOM.render(
 
 ---
 
-## 8. フック
+## 9. フック
 
 #### 【フックとは】
 - React 16.8で追加された機能、stateなどの機能をクラスを書かずに使うことができる。
