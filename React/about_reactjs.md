@@ -1,7 +1,7 @@
 # React.jsについて
 
 参照：
-掌田津耶乃『React.js Next.js 超入門』(秀和システム) / [React公式](https://ja.reactjs.org/)
+掌田津耶乃『React.js Next.js 超入門』(秀和システム) / [React公式ドキュメント](https://ja.reactjs.org/)
 
 環境：
 macOS(Catalina) / React 16.13
@@ -75,7 +75,7 @@ $ yarn test
 ## 5. JSX
 - JavaScript XMLの略。直感的で可読性が高い
 
-```JSX
+```JavaScript
 // 以下の２つは同じ表示となる
 function App() {
   return (
@@ -91,7 +91,7 @@ function App() {
 ```
 
 - タグは必ずひとつ。２つあるとエラーとなる。
-```JSX
+```JavaScript
 // これだとエラーとなる
 function App() {
   return (
@@ -101,7 +101,7 @@ function App() {
 }
 ```
 - 親タグとしてのdivを表示させたくない場合
-```JSX
+```JavaScript
 // React.Fragmentで囲むとHTML上では表示されない
 function App() {
   return (
@@ -352,13 +352,82 @@ ReactDOM.render(
 
 
 #### 【ステートフック】
+- stateを配列で定義。名前は任意につけることができる。
+```
+[state変数名, stateの値を更新する関数名] = useState(初期値);
+```
 
 ```JavaScript
+// useStateをインポート
 import React, { useState } from 'react';
 
 function Example() {
-  // useStateの引数が初期値となる
+  // useState
   const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+#### 【エフェクト(副作用)フック】
+- 関数の実行タイミングをReactのレンダリング後に遅らせる。
+- 初回レンダー時と毎回の更新時に呼び出される。
+```
+userEffect(() => { 関数など });
+```
+
+```JavaScript
+// useEffectをインポート
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // useEffect
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  })
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+
+- クラスの場合は、componentDidMountやcomponentDidUpdateで定義。
+- 同じコードを2回書かなくてはならないというデメリットがuseEffectで解消される。
+```JavaScript
+componentDidMount() {
+  document.title = `You clicked ${this.state.count} times`;
+}
+componentDidUpdate() {
+  document.title = `You clicked ${this.state.count} times`;
+}
+```
+
+- 第二引数に[count]を渡すとcountに変化があったときのみ再レンダーされる。
+```JavaScript
+import React, { useState, useEffect } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // useEffectの第二引数に[count]を指定
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  }, [count])
 
   return (
     <div>
