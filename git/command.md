@@ -28,6 +28,11 @@ $ git fetch
 $ git checkout -b BRANCHNAME origin/BRANCHNAME
 ```
 
+#### ローカルのブランチをリモートへプッシュ
+```
+$ git push -u origin BRANCHNAME
+```
+
 ## ローカル関連
 #### 変更内容をターミナル上で確認する
 
