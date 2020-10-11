@@ -63,7 +63,7 @@ $ npm run dev
 2. ディレクトリ下にJSファイル作成(この階層がURLになる)
 3. index.jsはホーム(/)となる
 
- - 作成ファイル内でComponentを作成
+作成ファイル内でComponentを作成
 ```JavaScript
 export default function ComponentName() {
   return <h1>hoge</h1>
@@ -73,8 +73,8 @@ export default function ComponentName() {
 ### 【リンクの作成】
 
 1. Linkをインポート
-2. <Link>タグ内に<a>タグを作成
-3. classNameなどは<a>タグに記述する
+2. Linkタグ内にaタグを作成
+3. classNameなどはaタグに記述する
 
 ```JavaScript
 // Linkをインポート
@@ -97,7 +97,8 @@ export default function ComponentName() {
 - Next.jsではCSS Modules、Sass、styled-jsxを使うことができる
 
 1. styled-jsxでのスタイリング
- - <style jsx>{`…`}</style>の中に記述する
+
+`<style jsx>{`…`}</style>`の中に記述する
 ```JavaScript
 import Link from 'next/link'
 
@@ -121,7 +122,7 @@ export default function ComponentName() {
 
 2. LayoutコンポーネントとCSS Modulesでのスタイリング
 
-- componentsフォルダをトップに作成し、その中にlayout.jsを作成
+componentsフォルダをトップに作成し、その中に`layout.js`を作成
 ```JavaScript
 // CSS Modulesをインポート
 import styles from './layout.module.css'
@@ -131,14 +132,14 @@ export default function Layout({ children }) {
   return <div className={styles.hoge}>{children}</div>
 }
 ```
-- componentsフォルダ下にlayout.module.cssを作成
+componentsフォルダ下に`layout.module.css`を作成
 ```CSS
 .hoge {
   margin: 1rem;
 }
 ```
 
-- レイアウトしたいファイルにインポート
+レイアウトしたいファイルにインポート
 ```JavaScript
 import Link from 'next/link'
 import Layout from '../../components/layout'
@@ -158,18 +159,16 @@ export default function ComponentName() {
 
 3. 全ページでCSSを設定する
 
-- pagesフォルダ下に`_app.js`を作成
-- このAppコンポーネントが、すべての異なるページに共通するトップレベルのコンポーネントとなる
+pagesフォルダ下に`_app.js`を作成
+このAppコンポーネントが、すべての異なるページに共通するトップレベルのコンポーネントとなる
 ```JavaScript
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
 
-- Global CSSを設定
-- CSSファイルはどこに配置してもok
-- CSSファイルを読み込むためには`_app.js`でインポートする必要がある
-
+Global CSSを設定(CSSファイルはどこに配置してもok)
+CSSファイルを読み込むためには`_app.js`でインポートする必要がある
 ```JavaScript
 // (例) stylesフォルダ内のglobal.cssを読み込みたい場合
 import '../styles/global.css'
