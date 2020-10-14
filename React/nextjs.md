@@ -17,6 +17,18 @@ macOS(Catalina) / React 16.13 / Next 9.5.3
 
 ## 2. 準備
 
+#### 【一括セットアップ】
+
+```
+$ npx create-next-app
+
+# or
+
+$ yarn create next-app
+```
+
+
+#### 【マニュアルセットアップ】
 1. プロジェクトの作成
 ```
 $ mkdir app_name
@@ -42,7 +54,7 @@ $ touch package.json
 ```
 $ npm install next react react-dom
 
-または
+# or
 
 $ yarn add next react react-dom
 ```
