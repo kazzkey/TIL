@@ -51,3 +51,14 @@ $ git log -p
 ```
 $ git grep "検索したいワード"
 ```
+
+#### 【コミットを取り消す(git reset系)】
+
+1. 直前のコミットに戻す
+```
+# 変更分を全てなかったことにする
+$ git reset --hard HEAD^
+
+# コミットのみ取り消すが、変更分は残す
+$ git reset --soft HEAD^
+```
