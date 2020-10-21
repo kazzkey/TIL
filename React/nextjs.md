@@ -71,11 +71,17 @@ $ npm run dev
 ## 4. 作成
 
 ### 【ファイルの作成】
-1. pagesディレクトリの作成
-2. ディレクトリ下にJSファイル作成(この階層がURLになる)
-3. index.jsはホーム(/)となる
+- Next.jsはルーティングの設定が用意されている。
 
-作成ファイル内でComponentを作成
+1. `pages`ディレクトリの作成
+2. ディレクトリ下にJSファイル作成(この階層がURLになる)
+3. index.jsはルート(/)となる
+
+(例)
+`pages/posts/first-post.js`を作った場合、URLは`/posts/first-post`となる
+
+
+(例) 作成ファイル内でComponentを作成
 ```JavaScript
 export default function ComponentName() {
   return <h1>hoge</h1>
@@ -83,6 +89,8 @@ export default function ComponentName() {
 ```
 
 ### 【リンクの作成】
+- Next.jsではページ遷移のためのLinkタグが用意されている。
+- JSによる遷移なので、高速かつURLを切り替えても再読み込み不要で、クライアントの状態が保持できる。
 
 1. Linkをインポート
 2. Linkタグ内にaタグを作成
