@@ -73,14 +73,21 @@ $ npm run dev
 ### 【ファイルの作成】
 - Next.jsはルーティングの設定が用意されている。
 
-1. `pages`ディレクトリの作成
-2. ディレクトリ下にJSファイル作成(この階層がURLになる)
-3. index.jsはルート(/)となる
-
+#### `pages`ディレクトリ
+- ディレクトリ下に作成したJSファイルの階層がURLになる
+- index.jsを作成すると、ルート(/)となる
 (例)
 `pages/posts/first-post.js`を作った場合、URLは`/posts/first-post`となる
 
+#### `public`ディレクトリ
+- 画像等の静的ファイルを管理できる
+- publicをルートとしたルートパスで記述すればOK
+(例) public下に`vercel.svg`が配置されているとして
+```JSX
+<img src="/vercel.svg" />
+```
 
+#### 記述
 (例) 作成ファイル内でComponentを作成
 ```JavaScript
 export default function ComponentName() {
@@ -89,7 +96,7 @@ export default function ComponentName() {
 ```
 
 ### 【リンクの作成】
-- Next.jsではページ遷移のためのLinkタグが用意されている。
+- Next.jsではページ遷移のためのLinkコンポーネントが用意されている。
 - JSによる遷移なので、高速かつURLを切り替えても再読み込み不要で、クライアントの状態が保持できる。
 
 1. Linkをインポート
@@ -112,8 +119,28 @@ export default function ComponentName() {
   )
 }
 ```
-### 【CSSの設定】
 
+### 【headの設定】
+- Next.jsではheadタグを設定するためのHeadコンポーネントが用意されている。
+- ページごとに設定できるのでSEO対策などに有効。
+
+```JavaScript
+// Headをインポート
+import Head from 'next/head'
+
+export default function ComponentName() {
+
+  return (
+    <div>
+      <Head>
+        <title>This is title!</title>
+      </Head>
+    </div>
+  )
+}
+```
+
+### 【CSSの設定】
 - Next.jsではCSS Modules、Sass、styled-jsxを使うことができる
 
 1. styled-jsxでのスタイリング
@@ -142,7 +169,7 @@ export default function ComponentName() {
 
 2. LayoutコンポーネントとCSS Modulesでのスタイリング
 
-componentsフォルダをトップに作成し、その中に`layout.js`を作成
+`components`ディレクトリをトップに作成し、その中に`layout.js`を作成
 ```JavaScript
 // CSS Modulesをインポート
 import styles from './layout.module.css'
@@ -150,12 +177,6 @@ import styles from './layout.module.css'
 // Layoutコンポーネントを作成し、JSX内にclassNameを指定
 export default function Layout({ children }) {
   return <div className={styles.hoge}>{children}</div>
-}
-```
-componentsフォルダ下に`layout.module.css`を作成
-```CSS
-.hoge {
-  margin: 1rem;
 }
 ```
 
@@ -167,7 +188,6 @@ import Layout from '../../components/layout'
 export default function ComponentName() {
 
   return (
-    // Layoutコンポーネントで囲む
     <Layout>
       <Link href="/foo/bar">
         <a>this is link to "/foo/bar" </a>
@@ -177,10 +197,19 @@ export default function ComponentName() {
 }
 ```
 
-3. 全ページでCSSを設定する
+`components`下に`layout.module.css`を作成
+```CSS
+.hoge {
+  margin: 1rem;
+}
+```
+**※CSS Modulesでは自動でユニークなクラス名に変換してくれる**
 
-pagesフォルダ下に`_app.js`を作成
+3. 全ページで設定するグローバルスタイリング
+
+`pages`下に`_app.js`を作成(ローカル開発時、作成後サーバのリスタートが必要)
 このAppコンポーネントが、すべての異なるページに共通するトップレベルのコンポーネントとなる
+
 ```JavaScript
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
@@ -188,7 +217,7 @@ export default function App({ Component, pageProps }) {
 ```
 
 Global CSSを設定(CSSファイルはどこに配置してもok)
-CSSファイルを読み込むためには`_app.js`でインポートする必要がある
+CSSファイルを読み込むためには`_app.js`でのインポートが必要
 ```JavaScript
 // (例) stylesフォルダ内のglobal.cssを読み込みたい場合
 import '../styles/global.css'
@@ -197,3 +226,8 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
+
+4. その他のスタイリング
+- classnames: 適用するクラスを動的に変更できる
+- PostCSS: 便利機能を持つプリプロセッサ
+- Sass
