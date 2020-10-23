@@ -231,3 +231,28 @@ export default function App({ Component, pageProps }) {
 - classnames: 適用するクラスを動的に変更できる
 - PostCSS: 便利機能を持つプリプロセッサ
 - Sass
+
+---
+
+## 5. プリレンダリング
+- Next.jsはデフォルトで全ページをPre-renderingする
+- ブラウザ側の負荷を下げて表示を高速化できるメリットがある
+
+### 【２種類のプリレンダリング】
+1. Static Generation
+- ビルドした(next build)ときにHTMLが生成される
+- 更新頻度の低いものに適している(ブログ、ECサイト、LP、問い合わせ等)
+
+2. Server-side Rendering
+- ユーザがリクエストを投げたときにHTMLが生成される
+- 更新頻度の高いものに適している(SNS、チャット、動画配信)
+
+### 【プリレンダリングの使い分け】
+- Next.jsではページごとにプリレンダリングの方法を選択できる
+- 基本的には Static Generation推奨
+
+### 【Static Generationでのプリレンダリング】
+- 外部データがある場合、ビルド時にDBや外部APIからデータを取得
+- 取得したデータをもとにHTMLを生成
+
+`getStaticProps`: `pages`ディレクトリ下でのみ使える
