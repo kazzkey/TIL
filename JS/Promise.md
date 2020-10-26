@@ -1,7 +1,8 @@
 # Promiseについて
 
 参照：
-[【JavaScript】初心者にもわかるPromiseの使い方](https://techplay.jp/column/581)
+[【JavaScript】初心者にもわかるPromiseの使い方](https://techplay.jp/column/581) / 
+[MDN web doc(Promiseを使う)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Using_promises)
 
 環境：
 macOS(Catalina)
