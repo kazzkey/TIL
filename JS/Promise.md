@@ -2,7 +2,8 @@
 
 参照：
 [【JavaScript】初心者にもわかるPromiseの使い方](https://techplay.jp/column/581) / 
-[MDN web doc(Promiseを使う)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Using_promises)
+[MDN web doc(Promiseを使う)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Using_promises) / 
+[JavaScript Promiseの本](https://azu.github.io/promises-book/)
 
 環境：
 macOS(Catalina)
