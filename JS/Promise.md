@@ -3,7 +3,10 @@
 参照：
 [【JavaScript】初心者にもわかるPromiseの使い方](https://techplay.jp/column/581) / 
 [MDN web doc(Promiseを使う)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Using_promises) / 
-[JavaScript Promiseの本](https://azu.github.io/promises-book/)
+[JavaScript Promiseの本](https://azu.github.io/promises-book/) / 
+[Promiseとはなんぞや？！できるだけわかりやすく説明してみた(ついでにasync/awaitも)
+](https://qiita.com/garchomp_otoka/items/7de9efc78e18e4c7e606)
+
 
 環境：
 macOS(Catalina)
