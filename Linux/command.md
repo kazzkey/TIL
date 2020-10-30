@@ -8,6 +8,11 @@ macOS(Catalina)
 
 ## 日常で見かけたコマンドを調べて記載しておく。
 
+### 【cat】
+- 設定ファイルの内容を確認するコマンド。
+
+[【cat】コマンド](https://www.atmarkit.co.jp/ait/articles/1602/25/news034.html)
+
 ### 【ip】
 - ネットワークデバイスのIPアドレスなどを表示、変更するコマンド。
 
