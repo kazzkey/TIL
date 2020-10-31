@@ -62,3 +62,9 @@ $ git reset --hard HEAD^
 # コミットのみ取り消すが、変更分は残す
 $ git reset --soft HEAD^
 ```
+
+### 【直前のコミットメッセージを変更する】
+
+```
+$ git commit --amend
+```
