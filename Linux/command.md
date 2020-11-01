@@ -13,6 +13,12 @@ macOS(Catalina)
 
 [【cat】コマンド](https://www.atmarkit.co.jp/ait/articles/1602/25/news034.html)
 
+### 【curl】
+- 様々なプロトコルでファイルを転送するコマンド
+- アップロード、ダウンロードができる
+
+[【curl】コマンド](https://www.atmarkit.co.jp/ait/articles/1606/22/news030.html)
+
 ### 【ip】
 - ネットワークデバイスのIPアドレスなどを表示、変更するコマンド。
 
