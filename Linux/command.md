@@ -1,7 +1,7 @@
 # Linux command 備忘録
 
 参照：
-[GitHub ヘルプドキュメント](https://docs.github.com/ja/github)
+[@IT Linux&OSS](https://www.atmarkit.co.jp/ait/subtop/linux/)
 
 環境：
 macOS(Catalina)
