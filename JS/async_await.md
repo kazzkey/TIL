@@ -39,7 +39,13 @@ getDate()
 ### 【基本的な構文】
 
 ```JavaScript
+// function型
 async funstion() {
+  // 処理
+}
+
+// アロー関数型
+const hoge = async () => {
   // 処理
 }
 ```
