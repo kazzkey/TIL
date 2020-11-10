@@ -32,6 +32,12 @@ macOS(Catalina) / [Firebase CLI 8.15.1](https://firebase.google.cn/docs/cli?hl=j
 
 ## 基本的なデータ受信
 
+- POINT
+  - `firebase.firestore()`でFirestoreのDBにアクセス
+  - `collection('hoge').doc('fuga')`でドキュメントを指定
+  - `get()`で取得
+  - `data()`でデータ内容を表示
+
 1. 1件のドキュメントを取得
 ```JavaScript
 // データを取得するボタンを設定したとして…
@@ -55,7 +61,7 @@ const handleClickFetchButton = () => {
 
 2. コレクションから複数ドキュメントを取得
 ```JavaScript
-// データを取得するボタンを設定したとして…
+// 取得したデータをsnapshot変数に格納しforEach()で全件表示する
 
 // <async/awaitパターン>
 const handleClickFetchButton = async () => {
@@ -77,6 +83,37 @@ const handleClickFetchButton = () => {
 };
 ```
 
+3. 絞り込んで取得
+```JavaScript
+// where() や limit() などを使ってSQLのように絞り込める
+// 例： 年齢20歳以下のユーザを1件取得
+
+// <async/awaitパターン>
+const handleClickFetchButton = async () => {
+  const db = firebase.firestore();
+  const snapshot = await db.collection('users')
+  .where('age', '<=', 20) // where
+  .limit(1) // limit
+  .get();
+  snapshot.forEach((doc) => {
+    console.log(doc.id, '=>', doc.data());
+  });
+};
+
+// <Promiseパターン>
+const handleClickFetchButton = () => {
+  const db = firebase.firestore();
+  db.collection('users')
+  .where('age', '<=', 20)
+  .limit(1)
+  .get()
+  .then((snapshot) => {
+    snapshot.forEach((doc) => {
+      console.log(doc.id, '=>', doc.data());
+    });
+  });
+};
+```
 
 
 <!-- ```JavaScript
