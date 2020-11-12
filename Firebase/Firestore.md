@@ -115,6 +115,50 @@ const handleClickFetchButton = () => {
 };
 ```
 
+## 基本的なデータ送信
+
+- POINT
+  - `set()`でドキュメントを作成、または上書き
+  - `add()`で新たにドキュメントを追加
+
+1. 1件のドキュメントを作成、または上書き
+```JavaScript
+// データを取得するボタンを設定したとして…
+// この場合、データが存在しない場合は作成される
+// データが既に存在する場合は、上書きされる
+
+// <async/awaitパターン>
+const handleClickAddButton = async () => {
+  const db = firebase.firestore();
+  await db
+    .collection('users')
+    .doc('alovelace')
+    .set({
+      name: 'Taro',
+      age: 20
+    })
+  });
+};
+```
+
+2. ドキュメントを新たに追加
+```JavaScript
+// データを取得するボタンを設定したとして…
+// add()の場合、ドキュメントIDを指定しなければ、自動生成される
+
+// <async/awaitパターン>
+const handleClickAddButton = async () => {
+  const db = firebase.firestore();
+  await db
+    .collection('users')
+    .add({
+      name: 'Taro',
+      age: 20
+    })
+  });
+};
+```
+
 
 <!-- ```JavaScript
 document.addEventListener('DOMContentLoaded', () => {
