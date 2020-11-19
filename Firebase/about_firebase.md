@@ -28,4 +28,8 @@ macOS(Catalina)
 - 認証機能を簡単に実装できる
 - Google認証だけでなくTwitterなどのサードパーティの認証も使用できる
 
+#### [Cloud Functions](./Functions.md)
+- Web APIの実装
+- 定期実行
+- イベントのトリガー
 ---
