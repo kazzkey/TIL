@@ -29,7 +29,6 @@ macOS(Catalina)
 - Google認証だけでなくTwitterなどのサードパーティの認証も使用できる
 
 #### [Cloud Functions](./Functions.md)
-- Web APIの実装
-- 定期実行
-- イベントのトリガー
+- Firebaseでバックエンドのプログラムを実行する機能
+- Web APIの実装や定期実行などができる
 ---
