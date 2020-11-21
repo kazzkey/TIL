@@ -7,9 +7,12 @@
 macOS(Catalina) / [Firebase CLI 8.15.1](https://firebase.google.cn/docs/cli?hl=ja)
 
 前提：
-- Firebaseプロジェクト作成 → [Cloud Firestore設定](https://firebase.google.com/docs/firestore/quickstart?hl=ja)
-- ローカルのディレクトリ作成
-- [Firebase CLIインストール → ログイン → Firestore設定](https://firebase.google.cn/docs/cli?hl=ja#install-cli-mac-linux)
+- Firebaseコンソール
+  - プロジェクト作成
+  - [Cloud Firestore設定](https://firebase.google.com/docs/firestore/quickstart?hl=ja)
+- ローカル
+  - ディレクトリ作成
+  - [Firebase CLIインストール → firebase init → Firestore設定](https://firebase.google.cn/docs/cli?hl=ja#install-cli-mac-linux)
 
 ---
 
