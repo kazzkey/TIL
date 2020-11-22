@@ -11,10 +11,9 @@ macOS(Catalina) / Node.js 14.15.0
 ## 1. expressとは
 - Node.jsのフレームワークのひとつ
 
----
 ## 2. 仕様
 
-1. インストール
+### 1. インストール
 
 (前提)Node.jsインストール、新規プロジェクトならば`npm init`
 ```
@@ -22,7 +21,7 @@ $ npm i express
 ```
 ※git管理する場合、`node_modules/`を`.gitignore`記述しておくべき
 
-2. Hello World
+### 2. Hello World
 
 - POINT
   - `express()`でexpressの機能を利用できる
@@ -45,7 +44,7 @@ app.listen(port, () => {
 });
 ```
 
-3. `express.Router()`を使ったルーティング
+### 3. `express.Router()`を使ったルーティング
 
 - POINT
   - 複雑なルーティングの場合は`app.get()`のような方法よりも効果的。
