@@ -23,10 +23,10 @@ $ npm i express
 
 ### 2. Hello World
 
-///POINT///
-  - `express()`でexpressの機能を利用できる
-  - `get('/', コールバック関数)`でルートに対してGETメソッドを使って処理
-  - `listen(ポート番号, コールバック関数)`で指定ポート番号でWebサーバ起動
+/// POINT ///
+- `express()`でexpressの機能を利用できる
+- `get('/', コールバック関数)`でルートに対してGETメソッドを使って処理
+- `listen(ポート番号, コールバック関数)`で指定ポート番号でWebサーバ起動
 
 ```JavaScript
 // app.js
@@ -46,11 +46,11 @@ app.listen(port, () => {
 
 ### 3. `express.Router()`を使ったルーティング
 
-///POINT///
-  - 複雑なルーティングの場合は`app.get()`のような方法よりも効果的。
-  - 別ファイルにルーティング処理を記述
-  - 読み込むファイルに`router`としてrequire
-  - `use(パス, router)`で読み込み
+/// POINT ///
+- 複雑なルーティングの場合は`app.get()`のような方法よりも効果的。
+- 別ファイルにルーティング処理を記述
+- 読み込むファイルに`router`としてrequire
+- `use(パス, router)`で読み込み
 
 ```JavaScript
 // router/index.js
