@@ -52,7 +52,7 @@ $ git log -p
 $ git grep "検索したいワード"
 ```
 
-#### 【コミットを取り消す(git reset系)】
+#### 【取り消す(git reset系)】
 
 1. 直前のコミットに戻す
 ```
@@ -61,6 +61,15 @@ $ git reset --hard HEAD^
 
 # コミットのみ取り消すが、変更分は残す
 $ git reset --soft HEAD^
+```
+
+2. ステージングを取り消す
+```
+# 指定ファイルのaddを取り消す
+$ git reset HEAD hoge.txt
+
+# すべてのaddを取り消す
+$ git reset HEAD .
 ```
 
 ### 【直前のコミットメッセージを変更する】
