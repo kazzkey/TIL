@@ -19,7 +19,7 @@ macOS(Catalina) / [Firebase CLI 8.16.2](https://firebase.google.cn/docs/cli?hl=j
 
 ## Hello World
 
-1. `functions/index.js`
+### 1. `functions/index.js`
 ```JavaScript
 // functions/index.js
 
@@ -31,7 +31,7 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 ```
 
-2. 実行
+### 2. 実行
 
 開発環境
 ```
@@ -45,12 +45,12 @@ $ npm run deploy
 
 ## expressでAPI実装
 
-1. express導入
+### 1. express導入
 ```
 $ npm i express
 ```
 
-2. routeを設定
+### 2. routeを設定
   - functionsディレクトリ下に`routers/messages`を作成
   - `route.js`などのファイルを作成
 
@@ -93,7 +93,7 @@ router
 module.exports = router;
 ```
 
-3. `index.js`でAPIを設定
+### 3. `index.js`でAPIを設定
 ```JavaScript
 // functions/index.js
 
