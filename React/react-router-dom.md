@@ -12,6 +12,7 @@ macOS(Catalina) / React
 - `npx create-react-app`などでアプリケーションを作成
 　
 ---
+　
 ## 1. react-router-domとは
 
 - ルーティングをかんたんに設定できるReactのライブラリ
@@ -19,7 +20,7 @@ macOS(Catalina) / React
 
 　
 ## 2. インストール
-
+　
 ```sh
 # ディレクトリ下で
 
@@ -28,7 +29,7 @@ $ npm i react-router-dom
 
 　
 ## 3. 準備
-
+　
 - `src`ディレクトリ下に`routes.js`と`pages`ディレクトリを作成
 - `pages`ディレクトリ下にコンポーネントを作成
   - Next.jsと同じ要領でこれが各ページになる
@@ -74,7 +75,7 @@ export default About;
 
 　
 ## 4. ルーティングの設定
-
+　
 ### `routes.js`の設定
 
 - ルートページには`exact: true`を指定
