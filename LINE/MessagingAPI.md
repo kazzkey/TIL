@@ -27,7 +27,7 @@ macOS(Catalina) / Google Spreadsheets
 　
 ### コンソール
 
-- 「Messaging API設定」タブ >> 「応答メッセージ」 >> **「編集」**
+- 「Messaging API設定」タブ >> 「応答メッセージ」 >> 「**編集**」
   - 「あいさつメッセージ」「応答メッセージ」を**オフ**に
   - 「Webhook」を**オン**に
 
@@ -256,9 +256,9 @@ function HmFormat(date){
 ### スクリプトエディタ
 - 「公開」 >> 「ウェブアプリケーションとして導入」
   - 「Project version」を「New」にして設定
-  - 「Who has access to the app:」は**「Anyone, even anonymous」**に
+  - 「Who has access to the app:」は「**Anyone, even anonymous**」に
   - 「Current web app URL」をコピー
 
 ### コンソール
-- 「Messaging API設定」タブ >> 「Webhook URL」 >> **「編集」**
-  - スプ氏のweb app URLをペーストして**「更新」**
+- 「Messaging API設定」タブ >> 「Webhook URL」 >> 「**編集**」
+  - スプ氏のweb app URLをペーストして「**更新**」
