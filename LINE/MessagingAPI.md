@@ -261,4 +261,4 @@ function HmFormat(date){
 
 ### コンソール
 - 「Messaging API設定」タブ >> 「Webhook URL」 >> 「**編集**」
-  - スプ氏のweb app URLをペーストして「**更新**」
+  - スプシのweb app URLをペーストして「**更新**」
