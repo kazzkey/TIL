@@ -10,13 +10,14 @@ macOS(Catalina) / React
 
 前提：
 - `npx create-react-app`などでアプリケーションを作成
-
+<br>
 ---
 ## 1. react-router-domとは
 
 - ルーティングをかんたんに設定できるReactのライブラリ
   - (参考) [Qiita: react-routerとreact-router-domの違い](https://qiita.com/koja1234/items/486f7396ed9c2568b235)
 
+<br>
 ## 2. インストール
 
 ```sh
@@ -25,6 +26,7 @@ macOS(Catalina) / React
 $ npm i react-router-dom
 ```
 
+<br>
 ## 3. 準備
 
 - `src`ディレクトリ下に`routes.js`と`pages`ディレクトリを作成
@@ -33,7 +35,7 @@ $ npm i react-router-dom
 
 (例)
 ```JavaScript
-// Top.js
+// pages/Top.js
 
 // Linkをインポートできる
 import { Link } from 'react-router-dom';
@@ -53,7 +55,7 @@ export default Top;
 ```
 
 ```JavaScript
-// About.js
+// pages/About.js
 
 import { Link } from 'react-router-dom';
 
@@ -70,6 +72,7 @@ const About = () => {
 export default About;
 ```
 
+<br>
 ## 4. ルーティングの設定
 
 ### `routes.js`の設定
@@ -131,7 +134,6 @@ export default withRouter(App);
 ### `index.js`の設定
 
 - `App`コンポーネントを`BrowserRouter`で囲む
-  - `BrowserRouter`はv4からの仕様
   - (参考) [BrowserRouter](https://reactrouter.com/web/api/BrowserRouter)
 
 ```JavaScript
