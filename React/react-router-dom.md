@@ -3,6 +3,7 @@
 参照：
 [公式ドキュメント](https://reactrouter.com/web/guides/) / 
 [Reactハンズオン勉強会（SPA開発編）](https://npo-fitness-engineer.connpass.com/event/194639/) / 
+[React勉強会資料](https://yu-sei-m.github.io/react-spa-hands-on/#0) / 
 [Qiita: React Router v4 からの主な移行・変更点一覧](https://qiita.com/TsutomuNakamura/items/b202bc7ebb2693937c13)
 
 環境：
@@ -98,7 +99,7 @@ const routes = [
 
 export default routes;
 ```
-
+　
 ### `App.js`の設定
 
 - mapメソッドを使えば、App.jsにルーティングを直書きするよりDRY
@@ -131,7 +132,7 @@ const App = () => {
 
 export default withRouter(App);
 ```
-
+　
 ### `index.js`の設定
 
 - `App`コンポーネントを`BrowserRouter`で囲む
