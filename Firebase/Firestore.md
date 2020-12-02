@@ -50,7 +50,6 @@ const handleClickFetchButton = async () => {
   const db = firebase.firestore();
   const doc = await db.collection('users').doc('alovelace').get();
   console.log('Doc Data:' doc.data());
-  });
 };
 
 // <Promiseパターン>
